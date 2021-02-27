@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Employee table</title>
+	<style>
+		body {
+			width: 750px;
+			margin: 0 auto;
+			border:6px solid black;
+		}
+		h1{
+		text-align:center;
+		}
+		table {
+			border-collapse: collapse;
+			border: 1px solid black;
+			margin: 20px;
+			margin-left:130px;
+		}
+		thead {
+			background-color: yellow;
+		}
+		th, td {
+			border: 1px solid black;
+			padding: .2em 1em .2em .5em;
+			text-align: left;
+			vertical-align: middle;
+		}
+		.right {
+			text-align: right;
+		}
+		tbody tr:nth-child(even) td {
+			background-color: yellow;
+		}
+		.one{
+		text-align: right;
+		font-weight: Bold;
+		}
+		
+	</style>
+</head>
+
+<body>
+<header>
+<h1>Employee Table</h1>
+</header>
+<table>
+	<thead>
+		<tr>
+			<th>Department</th>
+			<th>Name</th>
+			<th>E-mail</th>
+			<th class="right">Years of Service</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th rowspan="3" >Editorial</th>
+			<td>Joel Murach</td>
+			<td>joelmurach@yahoo.com</td>
+			<td class="right">22</td>
+		</tr>
+		<tr>
+			<td>Anne Boehm</td>
+			<td>anne@murach.com</td>
+			<td class="right">34</td>
+		</tr>
+		<tr>
+			<td>Zak Ruvalcaba</td>
+			<td>zak@modulemedia.com</td>
+			<td class="right">4</td>
+		</tr>
+		<tr>
+		<th rowspan="2" >Marketing</th>
+			<td>Judy Taylor</td>
+			<td>judy@murach.com</td>
+			<td class="right">39</td>
+		</tr>
+		<tr>
+			<td>Cyndi Vasquez</td>
+			<td>cyndi@murach.com</td>
+			<td class="right">10</td>
+		</tr>
+		<tr>
+		<th rowspan="2" >Customer Service</th>
+			<td>Kelly Slivkoff</td>
+			<td>kelly@murach.com</td>
+			<td class="right">25</td>
+		</tr>
+		<tr>
+			<td>Juliette Baylon</td>
+			<td>juliette@murach.com</td>
+			<td class="right">1</td>
+		</tr>
+		<tr>
+		<td colspan="3" class="one">Total Years of Service</td>
+		<td class="right"><b>105</b></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
