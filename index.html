@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tuxedo Cat Coffee</title>
+    <link type="text/css" rel="stylesheet" href="cafe.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script>
+		function onEspressoHover() {
+				$("#espresso_image").attr('src', 'images/espresso_info.jpg');
+			}
+
+		function offEspressoHover() {
+				$("#espresso_image").attr('src', 'images/espresso.jpg'); 
+			}
+		function onLatteHover() {
+				$("#latte_image").attr('src', 'images/latte_info.jpg');
+			}
+
+		function offLatteHover() {
+				$("#latte_image").attr('src', 'images/latte.jpg');
+			}
+		function onCappuccinoHover() {
+				$("#cappuccino_image").attr('src', 'images/cappuccino_info.jpg');
+			}
+
+		function offCappuccinoHover() {
+				$("#cappuccino_image").attr('src', 'images/cappuccino.jpg');
+			}
+		function onDripCoffeeHover() {
+				$("#coffee_image").attr('src', 'images/coffee_info.jpg');
+			}
+
+		function offDripCoffeeHover() {
+				$("#coffee_image").attr('src', 'images/coffee.jpg');
+			}
+		function onBiscottiHover() {
+				$("#biscotti_image").attr('src', 'images/biscotti_info.jpg');
+			}
+
+		function offBiscottiHover() {
+				$("#biscotti_image").attr('src', 'images/biscotti.jpg');
+			}
+		function onSconeHover() {
+				$("#scone_image").attr('src', 'images/scone_info.jpg');
+			}
+
+		function offSconeHover() {
+				$("#scone_image").attr('src', 'images/scone.jpg');
+			}
+		function addItem(itemName,itemCost){
+			var item= '$'+''+itemCost + ' - ' + itemName;
+			item=item.toString();
+			var order = document.getElementById("order");
+			order.options[order.options.length] = new Option(item, 'Value1');
+			addItemCost(itemCost);
+		}
+		function addItemCost(itemCost){
+           var myValue = document.getElementById("total");
+		   var sum= parseFloat(myValue.innerHTML) + parseFloat(itemCost);
+		   sum=sum.toFixed(2);
+		   document.getElementById("total").innerHTML =sum;
+		}
+		function onReset(){
+			document.getElementById("order_form").reset();
+			document.getElementById("total").innerHTML='0';
+			document.getElementById("order").innerHTML='';
+
+		}
+	</script>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Tuxedo Cat Coffee"/>
+    </header>
+    <main>
+        <form id="order_form" name="order_form" action="checkout.html" method="get">
+            <div id="menu">
+            	<h2>Menu</h2>
+            	<p>Click an item to add it to your order.</p>
+            	<ul>
+					<li><a href="#"><img id="espresso_image" src="images/espresso.jpg"  alt="espresso" onmouseover="onEspressoHover();" 
+				                         onmouseout="offEspressoHover();" onclick="addItem('Espresso','1.95');" /></a></li>
+                    
+					<li><a href="#"><img id="latte_image" src="images/latte.jpg" alt="latte" onmouseover="onLatteHover();" 
+								         onmouseout="offLatteHover();" onclick="addItem('Latte','2.95');"/></a></li>
+                    
+					<li><a href="#"><img id="cappuccino_image" src="images/cappuccino.jpg" alt="cappuccino" onmouseover="onCappuccinoHover();" 
+										 onmouseout="offCappuccinoHover();" onclick="addItem('Cappuccino','3.45');" /></a></li>
+                    
+					<li><a href="#"><img id="coffee_image" src="images/coffee.jpg" alt="coffee" onmouseover="onDripCoffeeHover();" 
+										 onmouseout="offDripCoffeeHover();" onclick="addItem('Drip Coffee','1.75');" /></a></li>
+                    
+					<li><a href="#"><img id="biscotti_image"  src="images/biscotti.jpg"  alt="biscotti" onmouseover="onBiscottiHover();" 
+										 onmouseout="offBiscottiHover();" onclick="addItem('Biscotti','1.95');" /></a></li>
+                    
+					<li><a href="#"><img id="scone_image"  src="images/scone.jpg"  alt="scone" onmouseover="onSconeHover();" 
+										 onmouseout="offSconeHover();" onclick="addItem('Scone','2.95');" /></a></li>
+            	</ul>
+            </div>
+
+            <div>
+            	<h2>Your Order</h2>
+            	<div>
+            		<select id="order" name="order" size="6">
+            		</select>
+            		<p>Total: $<span id="total">0</span></p>
+           		</div>
+            	<div id="buttons">
+           			<input type="button" name="place_order" id="place_order" value="Place Order"  onclick="location.href='checkout.html'">
+           			<input type="button" name="clear_order" id="clear_order" value="Clear Order" onclick="onReset()">				            		
+            	</div>
+            </div>   
+
+
+
+        </form>
+    </main> 
+</body>
+</html>
