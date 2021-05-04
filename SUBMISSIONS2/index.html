@@ -1,0 +1,55 @@
+<doctype html>
+<html>
+    <head>
+        <title>Black Jack Game</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="container">
+            <center>
+                <h1 class="header">Blackjack Game</h1>
+            </center>
+            <div class="MyGame">
+                <div id="dealer-cards">
+                    <ul id="dealer-cards-holder">
+
+                    </ul>
+                    <div>
+                        <h2 id="dealer-score"></h2>
+                    </div>
+                </div>
+                <div id="player-cards">
+                    <ul id="player-cards-holder">
+                    </ul>
+                    <div>
+                        <h2  id="player-score"></h2>
+                    </div>
+                </div>
+                <h2 id="Finalmessage"></h2>
+
+                <form name="blackjack" onSubmit="startNewGame(); return false;">
+              <div class="MyItems">
+                <input type='submit' id='start-btn' value='Deal'/>
+                <input type='button' id='hit-btn' value='Hit' onclick='getPlayerHit();' disabled/>
+                <input type='button' id='stand-btn' value='Stand' onclick='HitStand();' disabled/>
+              </div>
+               </form>
+            </div>
+        </div>
+        <div class="popup">
+              <div class="popup-content">
+
+              </div>
+              <p class="close-popup">
+                  Ok
+              </p>
+        </div>
+        <div class="footer">
+            <footer>
+              Black Jack Game  &copy; 2021
+            </footer>
+          </div>
+   </body>
+   <script src="index.js">
+   </script>
+</html>
